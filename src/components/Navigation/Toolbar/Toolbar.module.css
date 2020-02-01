@@ -4,7 +4,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #703b09;
+  background-color: rgb(92, 0, 221);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,4 +16,14 @@
 
 .Toolbar nav {
   height: 100%;
+}
+
+.Logo {
+  height: 90%;
+}
+
+@media (max-width: 499px) {
+  .DesktopOnly {
+    display: none;
+  }
 }
