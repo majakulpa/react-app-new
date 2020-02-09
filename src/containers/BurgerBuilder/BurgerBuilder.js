@@ -15,6 +15,10 @@ const INGREDIENT_PRICES = {
 };
 
 class BurgerBuilder extends Component {
+  // constructor(props) {
+  //     super(props);
+  //     this.state = {...}
+  // }
   state = {
     ingredients: null,
     totalPrice: 4,
@@ -25,7 +29,7 @@ class BurgerBuilder extends Component {
   };
 
   componentDidMount() {
-    //console.log(this.props);
+    console.log(this.props);
     axios
       .get("https://super-app-c4b18.firebaseio.com/orders/ingredients.json")
       .then(response => {
@@ -49,11 +53,11 @@ class BurgerBuilder extends Component {
 
   addIngredientHandler = type => {
     const oldCount = this.state.ingredients[type];
-    const updatedCounted = oldCount + 1;
+    const updatedCount = oldCount + 1;
     const updatedIngredients = {
       ...this.state.ingredients
     };
-    updatedIngredients[type] = updatedCounted;
+    updatedIngredients[type] = updatedCount;
     const priceAddition = INGREDIENT_PRICES[type];
     const oldPrice = this.state.totalPrice;
     const newPrice = oldPrice + priceAddition;
@@ -66,11 +70,11 @@ class BurgerBuilder extends Component {
     if (oldCount <= 0) {
       return;
     }
-    const updatedCounted = oldCount - 1;
+    const updatedCount = oldCount - 1;
     const updatedIngredients = {
       ...this.state.ingredients
     };
-    updatedIngredients[type] = updatedCounted;
+    updatedIngredients[type] = updatedCount;
     const priceDeduction = INGREDIENT_PRICES[type];
     const oldPrice = this.state.totalPrice;
     const newPrice = oldPrice - priceDeduction;
@@ -87,7 +91,8 @@ class BurgerBuilder extends Component {
   };
 
   purchaseContinueHandler = () => {
-    //alert("Continued");
+    // alert('You continue!');
+
     const queryParams = [];
     for (let i in this.state.ingredients) {
       queryParams.push(
@@ -105,21 +110,19 @@ class BurgerBuilder extends Component {
   };
 
   render() {
-    const disableInfo = {
+    const disabledInfo = {
       ...this.state.ingredients
     };
-    // spread operator to create copy of ingreients object
-    for (let key in disableInfo) {
-      disableInfo[key] = disableInfo[key] <= 0;
-      // {saled: true, meat: false, ...}
+    for (let key in disabledInfo) {
+      disabledInfo[key] = disabledInfo[key] <= 0;
     }
     let orderSummary = null;
-
     let burger = this.state.error ? (
-      <p>Ingredients can't be loaded</p>
+      <p>Ingredients can't be loaded!</p>
     ) : (
       <Spinner />
     );
+
     if (this.state.ingredients) {
       burger = (
         <>
@@ -127,28 +130,26 @@ class BurgerBuilder extends Component {
           <BuildControls
             ingredientAdded={this.addIngredientHandler}
             ingredientRemoved={this.removeIngredientHandler}
-            disabled={disableInfo}
-            price={this.state.totalPrice}
+            disabled={disabledInfo}
             purchasable={this.state.purchasable}
             ordered={this.purchaseHandler}
+            price={this.state.totalPrice}
           />
         </>
       );
-
-      if (this.state.loading) {
-        orderSummary = <Spinner />;
-      }
-
       orderSummary = (
         <OrderSummary
           ingredients={this.state.ingredients}
+          price={this.state.totalPrice}
           purchaseCancelled={this.purchaseCancelHandler}
           purchaseContinued={this.purchaseContinueHandler}
-          price={this.state.totalPrice}
         />
       );
     }
-
+    if (this.state.loading) {
+      orderSummary = <Spinner />;
+    }
+    // {salad: true, meat: false, ...}
     return (
       <>
         <Modal
