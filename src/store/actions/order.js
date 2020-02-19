@@ -9,6 +9,12 @@ export const purchaseBurgerSuccess = (id, orderData) => {
   };
 };
 
+export const purchaseInit = () => {
+  return {
+    type: actionTypes.PURCHASE_INIT
+  };
+};
+
 export const purchaseBurgerFail = error => {
   return {
     type: actionTypes.PURCHASE_BURGER_FAIL,
@@ -51,6 +57,7 @@ export const fetchOrdersStart = () => {
 
 export const fetchOrders = () => {
   return dispatch => {
+    dispatch(fetchOrdersStart());
     axios
       .get("/orders.json")
       .then(res => {
