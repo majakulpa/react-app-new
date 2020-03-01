@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/react-app-new/static/css/main.f26f46d9.chunk.css",
+    "main.js": "/react-app-new/static/js/main.cab11be0.chunk.js",
+    "main.js.map": "/react-app-new/static/js/main.cab11be0.chunk.js.map",
+    "runtime-main.js": "/react-app-new/static/js/runtime-main.f2c3ae87.js",
+    "runtime-main.js.map": "/react-app-new/static/js/runtime-main.f2c3ae87.js.map",
+    "static/js/2.63b5d5ba.chunk.js": "/react-app-new/static/js/2.63b5d5ba.chunk.js",
+    "static/js/2.63b5d5ba.chunk.js.map": "/react-app-new/static/js/2.63b5d5ba.chunk.js.map",
+    "static/css/3.02dda609.chunk.css": "/react-app-new/static/css/3.02dda609.chunk.css",
+    "static/js/3.2f5234d3.chunk.js": "/react-app-new/static/js/3.2f5234d3.chunk.js",
+    "static/js/3.2f5234d3.chunk.js.map": "/react-app-new/static/js/3.2f5234d3.chunk.js.map",
+    "static/css/4.bebde759.chunk.css": "/react-app-new/static/css/4.bebde759.chunk.css",
+    "static/js/4.6417d624.chunk.js": "/react-app-new/static/js/4.6417d624.chunk.js",
+    "static/js/4.6417d624.chunk.js.map": "/react-app-new/static/js/4.6417d624.chunk.js.map",
+    "static/css/5.19738895.chunk.css": "/react-app-new/static/css/5.19738895.chunk.css",
+    "static/js/5.e3e90090.chunk.js": "/react-app-new/static/js/5.e3e90090.chunk.js",
+    "static/js/5.e3e90090.chunk.js.map": "/react-app-new/static/js/5.e3e90090.chunk.js.map",
+    "index.html": "/react-app-new/index.html",
+    "precache-manifest.01e611c895fda23beb597491bd0abe0a.js": "/react-app-new/precache-manifest.01e611c895fda23beb597491bd0abe0a.js",
+    "service-worker.js": "/react-app-new/service-worker.js",
+    "static/css/3.02dda609.chunk.css.map": "/react-app-new/static/css/3.02dda609.chunk.css.map",
+    "static/css/4.bebde759.chunk.css.map": "/react-app-new/static/css/4.bebde759.chunk.css.map",
+    "static/css/5.19738895.chunk.css.map": "/react-app-new/static/css/5.19738895.chunk.css.map",
+    "static/css/main.f26f46d9.chunk.css.map": "/react-app-new/static/css/main.f26f46d9.chunk.css.map",
+    "static/js/2.63b5d5ba.chunk.js.LICENSE": "/react-app-new/static/js/2.63b5d5ba.chunk.js.LICENSE",
+    "static/media/burger-logo.png": "/react-app-new/static/media/burger-logo.b8503d26.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f2c3ae87.js",
+    "static/js/2.63b5d5ba.chunk.js",
+    "static/css/main.f26f46d9.chunk.css",
+    "static/js/main.cab11be0.chunk.js"
+  ]
+}
